@@ -7,7 +7,7 @@ const DonorDashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/donations/my", {
+      const res = await fetch("https://uor.onrender.com/api/donations/my", {
         credentials: "include",
       });
       if (!res.ok) throw new Error("Failed to fetch dashboard data");

@@ -15,7 +15,7 @@ const AdminProfile = () => {
   const [editData, setEditData] = useState({ ...adminData });
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/users/donor", {
+    fetch("https://uor.onrender.com/api/users/donor", {
       method: "GET",
       credentials: "include",
     })
@@ -45,7 +45,7 @@ const AdminProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/users/update-profile", {
+      const res = await fetch("https://uor.onrender.com/api/users/update-profile", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

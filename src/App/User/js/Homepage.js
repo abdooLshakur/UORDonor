@@ -42,7 +42,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchCauses = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/causes");
+        const res = await fetch("https://uor.onrender.com/api/causes");
         if (!res.ok) throw new Error("Failed to fetch causes");
         const data = await res.json();
         setCauses(data);

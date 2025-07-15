@@ -11,7 +11,7 @@ const AdminUsers = () => {
   const fetchDonors = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/users?page=${currentPage}&limit=${itemsPerPage}&search=${encodeURIComponent(searchQuery)}`,
+        `https://uor.onrender.com/api/users?page=${currentPage}&limit=${itemsPerPage}&search=${encodeURIComponent(searchQuery)}`,
         {
           credentials: "include",
         }

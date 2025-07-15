@@ -25,7 +25,7 @@ const AdminCauses = () => {
 
   const fetchCauses = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/causes", {
+      const res = await fetch("https://uor.onrender.com/api/causes", {
         credentials: "include",
       });
       if (!res.ok) throw new Error("Failed to fetch causes");
@@ -63,8 +63,8 @@ const AdminCauses = () => {
 
       const method = editIndex !== null ? "PATCH" : "POST";
       const url = editIndex !== null
-        ? `http://localhost:5000/api/causes/${causes[editIndex]._id}`
-        : "http://localhost:5000/api/causes/add";
+        ? `https://uor.onrender.com/api/causes/${causes[editIndex]._id}`
+        : "https://uor.onrender.com/api/causes/add";
 
 
       const res = await fetch(url, {
@@ -108,7 +108,7 @@ const AdminCauses = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this cause?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/causes/${id}`, {
+      const res = await fetch(`https://uor.onrender.com/api/causes/${id}`, {
         method: "DELETE",
         credentials: "include",
       });

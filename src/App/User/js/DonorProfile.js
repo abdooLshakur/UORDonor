@@ -14,7 +14,7 @@ const DonorProfile = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/users/donor", {
+    fetch("https://uor.onrender.com/api/users/donor", {
       method: "GET",
       credentials: "include",
     })
@@ -48,7 +48,7 @@ const DonorProfile = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/api/users/update-profile", {
+      const res = await fetch("https://uor.onrender.com/api/users/update-profile", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

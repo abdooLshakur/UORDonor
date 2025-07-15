@@ -14,7 +14,7 @@ const AdminDonations = () => {
 
   const fetchDonations = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/donations", {
+      const res = await fetch("https://uor.onrender.com/api/donations", {
         credentials: "include",
       });
       if (!res.ok) throw new Error("Failed to fetch donations");
@@ -28,7 +28,7 @@ const AdminDonations = () => {
 
   const handleVerify = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/donations/${id}/verify`, {
+      const res = await fetch(`https://uor.onrender.com/api/donations/${id}/verify`, {
         method: "PATCH",
         credentials: "include",
       });

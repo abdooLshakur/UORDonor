@@ -11,8 +11,8 @@ const AdminDashboard = () => {
     const fetchDashboardData = async () => {
       try {
         const [statsRes, causesRes] = await Promise.all([
-          fetch("http://localhost:5000/api/users/stats", { credentials: "include" }),
-          fetch("http://localhost:5000/api/causes", { credentials: "include" }),
+          fetch("https://uor.onrender.com/api/users/stats", { credentials: "include" }),
+          fetch("https://uor.onrender.com/api/causes", { credentials: "include" }),
         ]);
 
         if (!statsRes.ok || !causesRes.ok) throw new Error("Failed to fetch dashboard data");
