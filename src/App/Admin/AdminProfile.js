@@ -30,7 +30,7 @@ const AdminProfile = () => {
       })
       .catch((err) => {
         console.error("Error fetching profile:", err);
-        navigate("/Donorlogin");
+        navigate("/admin-login");
       });
   }, [navigate]);
 
