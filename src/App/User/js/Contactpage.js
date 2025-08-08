@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ContactPage = () => {
-  const api = "http://localhost:5000";
+  const api = "https://uor.onrender.com";
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {

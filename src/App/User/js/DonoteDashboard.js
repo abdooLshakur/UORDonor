@@ -10,7 +10,7 @@ const DonatePage = () => {
   useEffect(() => {
     const fetchCauses = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/causes", {
+        const res = await fetch("https://uor.onrender.com/api/causes", {
           method: "GET",
           credentials: "include",
         });

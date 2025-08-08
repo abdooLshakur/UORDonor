@@ -15,7 +15,7 @@ const CausesListPage = () => {
   useEffect(() => {
     const fetchCauses = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/causes", {
+        const res = await fetch("https://uor.onrender.com/api/causes", {
           credentials: "include",
         });
         if (!res.ok) throw new Error("Failed to fetch causes");
