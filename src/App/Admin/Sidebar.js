@@ -39,9 +39,9 @@ const AdminSidebar = () => {
                     </nav>
                 </div>
                 <div className="p-4 border-t border-stone-700">
-                    <button className="flex items-center gap-3 p-2 w-full rounded hover:bg-stone-700">
+                    <Link to={"/admin-login"}className="flex items-center gap-3 p-2 w-full rounded hover:bg-stone-700">
                         <FaSignOutAlt /> Logout
-                    </button>
+                    </Link>
                 </div>
             </aside>
         </div>
