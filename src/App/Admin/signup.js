@@ -14,7 +14,7 @@ const AdminSignup = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const Navigate = useNavigate();
-  const api = "https://uor.onrender.com";
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
 
   const handleEvent = async (e) => {
     setIsLoading(true);

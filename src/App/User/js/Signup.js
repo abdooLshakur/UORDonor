@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const DonorSignUp = () => {
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullname: "",
@@ -38,7 +39,7 @@ const DonorSignUp = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://uor.onrender.com/api/users/register", {
+      const response = await fetch(`${api}/api/users/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

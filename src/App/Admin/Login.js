@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const AdminLogin = () => {
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -26,7 +27,7 @@ const AdminLogin = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("https://uor.onrender.com/api/users/login", {
+      const response = await fetch(`${api}/api/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

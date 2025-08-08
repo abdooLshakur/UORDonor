@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import AdminSidebar from "./Sidebar";
 
 const AdminCauses = () => {
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const [causes, setCauses] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [editIndex, setEditIndex] = useState(null);
@@ -25,7 +26,7 @@ const AdminCauses = () => {
 
   const fetchCauses = async () => {
     try {
-      const res = await fetch("https://uor.onrender.com/api/causes", {
+      const res = await fetch(`${api}/api/causes`, {
         credentials: "include",
       });
       if (!res.ok) throw new Error("Failed to fetch causes");
@@ -63,8 +64,8 @@ const AdminCauses = () => {
 
       const method = editIndex !== null ? "PATCH" : "POST";
       const url = editIndex !== null
-        ? `https://uor.onrender.com/api/causes/${causes[editIndex]._id}`
-        : "https://uor.onrender.com/api/causes/add";
+        ? `${api}/api/causes/${causes[editIndex]._id}`
+        : `${api}/api/causes/add`;
 
 
       const res = await fetch(url, {
@@ -108,7 +109,7 @@ const AdminCauses = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this cause?")) return;
     try {
-      const res = await fetch(`https://uor.onrender.com/api/causes/${id}`, {
+      const res = await fetch(`${api}/api/causes/${id}`, {
         method: "DELETE",
         credentials: "include",
       });

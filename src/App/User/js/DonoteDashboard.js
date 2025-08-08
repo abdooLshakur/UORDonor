@@ -5,12 +5,13 @@ import Sidebar from "./Sidebar";
 const DonatePage = () => {
   const [causes, setCauses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 10;
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
 
   useEffect(() => {
     const fetchCauses = async () => {
       try {
-        const res = await fetch("https://uor.onrender.com/api/causes", {
+        const res = await fetch(`${api}/api/causes`, {
           method: "GET",
           credentials: "include",
         });

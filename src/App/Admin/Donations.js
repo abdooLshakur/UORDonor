@@ -3,6 +3,7 @@ import { FaCheckCircle, FaHourglassHalf} from "react-icons/fa";
 import AdminSidebar from "./Sidebar";
 
 const AdminDonations = () => {
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const [donations, setDonations] = useState([]);
   const [statusFilter, setStatusFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,7 +15,7 @@ const AdminDonations = () => {
 
   const fetchDonations = async () => {
     try {
-      const res = await fetch("https://uor.onrender.com/api/donations", {
+      const res = await fetch(`${api}/api/donations`, {
         credentials: "include",
       });
       if (!res.ok) throw new Error("Failed to fetch donations");
@@ -28,7 +29,7 @@ const AdminDonations = () => {
 
   const handleVerify = async (id) => {
     try {
-      const res = await fetch(`https://uor.onrender.com/api/donations/${id}/verify`, {
+      const res = await fetch(`${api}/api/donations/${id}/verify`, {
         method: "PATCH",
         credentials: "include",
       });

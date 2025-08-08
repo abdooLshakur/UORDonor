@@ -6,7 +6,7 @@ const DonorLogin = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -26,7 +26,7 @@ const DonorLogin = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("https://uor.onrender.com/api/users/login", {
+      const response = await fetch(`${api}/api/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 
 const DonateFormPage = () => {
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const { id } = useParams();
   const [cause, setCause] = useState(null);
   const [formData, setFormData] = useState({ name: "", email: "", amount: "", note: "" });
@@ -14,7 +15,7 @@ const DonateFormPage = () => {
   useEffect(() => {
     const fetchCause = async () => {
       try {
-        const res = await fetch(`https://uor.onrender.com/api/causes/${id}`, {
+        const res = await fetch(`${api}/api/causes/${id}`, {
           credentials: "include",
         });
         if (!res.ok) throw new Error("Failed to fetch cause");
@@ -61,7 +62,7 @@ const DonateFormPage = () => {
   const handleIveSent = async () => {
     try {
       setLoading(true);
-      const res = await fetch("https://uor.onrender.com/api/donations/add", {
+      const res = await fetch(`${api}/api/donations/add`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

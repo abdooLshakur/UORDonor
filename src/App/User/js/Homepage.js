@@ -26,6 +26,7 @@ const heroSlides = [
 ];
 
 const HomePage = () => {
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const [currentSlide, setCurrentSlide] = useState(0);
   const [causes, setCauses] = useState([]);
 
@@ -42,7 +43,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchCauses = async () => {
       try {
-        const res = await fetch("https://uor.onrender.com/api/causes");
+        const res = await fetch(`${api}/api/causes`);
         if (!res.ok) throw new Error("Failed to fetch causes");
         const data = await res.json();
         setCauses(data);

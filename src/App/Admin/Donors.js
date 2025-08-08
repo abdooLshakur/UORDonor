@@ -7,11 +7,12 @@ const AdminUsers = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const itemsPerPage = 8;
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
 
   const fetchDonors = async () => {
     try {
       const res = await fetch(
-        `https://uor.onrender.com/api/users?page=${currentPage}&limit=${itemsPerPage}&search=${encodeURIComponent(searchQuery)}`,
+        `${api}/api/users?page=${currentPage}&limit=${itemsPerPage}&search=${encodeURIComponent(searchQuery)}`,
         {
           credentials: "include",
         }

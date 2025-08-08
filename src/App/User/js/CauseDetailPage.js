@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const CauseDetailPage = () => {
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const { id } = useParams();
   const navigate = useNavigate();
   const [cause, setCause] = useState(null);
@@ -13,7 +14,7 @@ const CauseDetailPage = () => {
   useEffect(() => {
     const fetchCause = async () => {
       try {
-        const res = await fetch(`https://uor.onrender.com/api/causes/${id}`, {
+        const res = await fetch(`${api}/api/causes/${id}`, {
           credentials: "include",
         });
         if (!res.ok) throw new Error("Failed to fetch cause");

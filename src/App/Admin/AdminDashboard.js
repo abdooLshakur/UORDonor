@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import AdminSidebar from "./Sidebar";
 
 const AdminDashboard = () => {
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const [stats, setStats] = useState(null);
   const [causes, setCauses] = useState([]);
 
@@ -11,8 +12,8 @@ const AdminDashboard = () => {
     const fetchDashboardData = async () => {
       try {
         const [statsRes, causesRes] = await Promise.all([
-          fetch("https://uor.onrender.com/api/users/stats", { credentials: "include" }),
-          fetch("https://uor.onrender.com/api/causes", { credentials: "include" }),
+          fetch(`${api}/api/users/stats`, { credentials: "include" }),
+          fetch(`${api}/api/causes`, { credentials: "include" }),
         ]);
 
         if (!statsRes.ok || !causesRes.ok) throw new Error("Failed to fetch dashboard data");

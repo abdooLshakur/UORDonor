@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AdminProfile = () => {
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const navigate = useNavigate();
   const [adminData, setAdminData] = useState({
     fullName: "",
@@ -15,7 +16,7 @@ const AdminProfile = () => {
   const [editData, setEditData] = useState({ ...adminData });
 
   useEffect(() => {
-    fetch("https://uor.onrender.com/api/users/donor", {
+    fetch(`${api}/api/users/donor`, {
       method: "GET",
       credentials: "include",
     })
@@ -45,7 +46,7 @@ const AdminProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("https://uor.onrender.com/api/users/update-profile", {
+      const res = await fetch(`${api}/api/users/update-profile`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

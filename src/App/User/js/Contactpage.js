@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ContactPage = () => {
-  const api = "https://uor.onrender.com";
+  const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -55,13 +55,13 @@ const ContactPage = () => {
           </p>
 
           <div className="space-y-2 text-stone-700">
-            <p><strong>📞 Phone:</strong> +234 915 551 1890</p>
+            <p><strong>📞 Phone:</strong> +234 903 827 3856</p>
             <p><strong>✉️ Email:</strong> uorcharityfoundation@gmail.com</p>
             <p><strong>📍 Address:</strong> Remote / Online-based</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-4 mt-6 text-stone-600 text-xl">
-            <a href="https://wa.me/2347078561641" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-green-600">
+            <a href="https://wa.me/2349038273856" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-green-600">
               <FaWhatsapp />
             </a>
             <a href="#" aria-label="Instagram" className="hover:text-pink-600">
