@@ -1,20 +1,20 @@
 {
-  "short_name": "Halal Matchmaking",
-  "name": "Matching two hearts in the course that they find tranquility, love, and mercy in matrimony, to earn the pleasure of Allah.",
+  "short_name": "Umma Of Rasulullah Charity Foundation",
+  "name": "Serving Humanity With Islamic Values.",
   "icons": [
     {
-      "src": "logo.jpg",
+      "src": "logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo.jpg",
-      "type": "image/jpg",
+      "src": "logo.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo.jpg",
-      "type": "image/jpg",
+      "src": "logo.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
