@@ -61,7 +61,7 @@ const ContactPage = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-4 mt-6 text-stone-600 text-xl">
-            <a href="https://wa.me/2349038273856" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-green-600">
+            <a href="https://chat.whatsapp.com/E1T1LqGwk2cByn6s4wel7s" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-green-600">
               <FaWhatsapp />
             </a>
             <a href="#" aria-label="Instagram" className="hover:text-pink-600">
