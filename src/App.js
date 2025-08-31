@@ -48,6 +48,7 @@ function App() {
         <Route path="/admin-causes" element={<AdminCauses />} />
         <Route path="/admin-profile" element={<AdminProfile />} />
         <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/record" element={<AdminLogin />} />
         <Route path="/admin-donors" element={<AdminUsers />} />
       </Routes>
 

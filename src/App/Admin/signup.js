@@ -5,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const AdminSignup = () => {
   const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [dob, setdob] = useState("");
@@ -24,7 +23,6 @@ const AdminSignup = () => {
 
     if (
       isEmpty(fname) ||
-      isEmpty(lname) ||
       isEmpty(email) ||
       isEmpty(phone) ||
       isEmpty(dob) ||
@@ -53,8 +51,7 @@ const AdminSignup = () => {
     }
 
     const signupData = {
-      first_name: fname.trim(),
-      last_name: lname.trim(),
+      fullName: fname.trim(),
       age,
       email: email.trim(),
       phone: phone.trim(),
@@ -62,7 +59,7 @@ const AdminSignup = () => {
       gender: Gender.trim(),
     };
 
-    const apiUrl = `${api}/register-Admin`;
+    const apiUrl = `${api}/api/users/Adminregister`;
 
     try {
       const response = await fetch(apiUrl, {
@@ -80,7 +77,7 @@ const AdminSignup = () => {
       if (data.success) {
         toast.success(data.message || "Sign up successful!");
         setTimeout(() => {
-          Navigate("/adminlogin");
+          Navigate("/admin-login");
         }, 500);
       } else {
         setError(true);
@@ -115,21 +112,6 @@ const AdminSignup = () => {
             {error && fname === "" && (
               <span className="text-red-500 text-sm mt-1 block">
                 Please enter First name.
-              </span>
-            )}
-          </div>
-
-          <div>
-            <input
-              type="text"
-              placeholder="Last Name"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300"
-              value={lname}
-              onChange={(e) => setLname(e.target.value)}
-            />
-            {error && lname === "" && (
-              <span className="text-red-500 text-sm mt-1 block">
-                Please enter Last name.
               </span>
             )}
           </div>
