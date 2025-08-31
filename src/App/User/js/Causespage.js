@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { FaDonate } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import  { useState, useEffect } from "react";
+import { Link, useNavigate} from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -122,12 +121,12 @@ const CausesListPage = () => {
                   >
                     View Details
                   </button>
-                  <button
-                    onClick={() => navigate(`/donateform/${cause._id}`)}
-                    className="w-full flex justify-center items-center gap-2 bg-stone-800 hover:bg-stone-900 text-white px-4 py-2 rounded text-sm"
+                  <Link
+                    to={`/donateform/${cause._id}`}
+                    className="mt-auto bg-stone-800 hover:bg-stone-900 text-white py-2 rounded font-semibold text-center"
                   >
-                    <FaDonate /> Donate
-                  </button>
+                    Donate Now
+                  </Link>
                 </div>
               </div>
             </div>

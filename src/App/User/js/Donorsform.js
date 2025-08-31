@@ -145,9 +145,9 @@ const DonateFormPage = () => {
           <div className="mt-8 animate-slide-up">
             <h3 className="text-lg font-semibold text-stone-700 mb-3 text-center">Transfer Details</h3>
             <div className="bg-stone-50 border border-stone-300 p-4 rounded mb-6 text-center">
-              <p className="text-sm">Account Name: UOR Charity Foundation</p>
-              <p className="text-sm">Account Number: 1234567890</p>
-              <p className="text-sm">Bank: UBA Bank</p>
+              <p className="text-sm">Account Name: UUMMA OF RASULULLAH CHARITY FOUDATION</p>
+              <p className="text-sm">Account Number: 1100896243</p>
+              <p className="text-sm">Bank: 9 SERVICE BANK</p>
             </div>
             <a
               href={generateWhatsAppLink()}
