@@ -12,7 +12,6 @@ export default function Navbar() {
     const token = Cookies.get("user");
 
     if (token) {
-      console.log("Token found:", token);
       setIsAuthenticated(true);
     } else {
       console.log("No token found");
