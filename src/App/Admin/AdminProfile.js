@@ -25,8 +25,10 @@ const AdminProfile = () => {
         setAdminData({
           fullName: data.fullName || "",
           email: data.email || "",
+          age: data.age || "",
           phoneNumber: data.phoneNumber || "",
           role: data.role || "",
+          location: data.location || "",
         });
       })
       .catch((err) => {
@@ -95,11 +97,31 @@ const AdminProfile = () => {
             />
           </div>
           <div>
+            <label className="block mb-1 text-sm font-medium text-stone-700">Age</label>
+            <input
+              type="email"
+              value={editData.age}
+              disabled
+              className="w-full bg-stone-100 px-4 py-2 rounded border border-stone-300"
+            />
+          </div>
+          <div>
             <label className="block mb-1 text-sm font-medium text-stone-700">Phone Number</label>
             <input
               type="tel"
               name="phoneNumber"
               value={editData.phoneNumber}
+              onChange={handleChange}
+              className="w-full border border-stone-300 px-4 py-2 rounded"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-1 text-sm font-medium text-stone-700">Location</label>
+            <input
+              type="tel"
+              name="phoneNumber"
+              value={editData.location}
               onChange={handleChange}
               className="w-full border border-stone-300 px-4 py-2 rounded"
               required
