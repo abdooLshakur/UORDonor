@@ -22,6 +22,7 @@ const AdminProfile = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         setAdminData({
           fullName: data.fullName || "",
           email: data.email || "",
