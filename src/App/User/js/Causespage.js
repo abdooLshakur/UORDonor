@@ -43,6 +43,7 @@ const CausesListPage = () => {
     const bComplete = b.raisedAmount >= b.goalAmount;
     return aComplete - bComplete;
   });
+  const images = causes.images && causes.images.length > 0 ? causes.images : [causes.images];
 
   const totalPages = Math.ceil(sorted.length / causesPerPage);
   const start = (currentPage - 1) * causesPerPage;
@@ -51,8 +52,11 @@ const CausesListPage = () => {
   const causeTypes = ["All", ...new Set(causes.map((c) => c.type))];
 
   return (
-    <div className="min-w-[100vw] max-w-6xl mx-auto">
+    <div className="min-w-[99vw] max-w-6xl mx-auto">
       <Navbar />
+
+        <main className="min-h-[57vh]">
+
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4 px-6 mt-[30px]">
         <h2 className="text-3xl font-bold text-stone-800">Causes</h2>
         <div className="flex flex-col sm:flex-row gap-2">
@@ -89,7 +93,7 @@ const CausesListPage = () => {
               className="bg-white rounded shadow overflow-hidden flex flex-col justify-between"
             >
               <img
-                src={cause.image}
+                src={cause.images[0]}
                 alt={cause.title}
                 className="w-full h-48 object-cover"
               />
@@ -100,9 +104,10 @@ const CausesListPage = () => {
                 <p className="text-sm text-stone-600 mb-2">
                   <strong>Location:</strong> {cause.location || "N/A"}
                 </p>
-                <p className="text-sm text-stone-600 mb-4 flex-grow">
+                <p className="text-gray-600 text-sm line-clamp-3">
                   {cause.description}
                 </p>
+                <br />
                 <div className="mb-2 text-sm">
                   <strong>Raised:</strong> ₦
                   {cause.raisedAmount.toLocaleString()} / ₦
@@ -157,6 +162,7 @@ const CausesListPage = () => {
           </button>
         </div>
       )}
+      </main>
       <Footer />
     </div>
   );

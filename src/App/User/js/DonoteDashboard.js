@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 const DonatePage = () => {
   const [causes, setCauses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const navigate = useNavigate();
+
   const itemsPerPage = 10;
   const api = "https://api.ummaofrasulullahcharityfoundation.com";
 
@@ -60,13 +62,14 @@ const DonatePage = () => {
               return (
                 <div key={cause._id} className="bg-white rounded shadow flex flex-col h-full">
                   <img
-                    src={cause.imageUrl}
+                    src={cause.images[0]}
                     alt={cause.title}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-4 flex flex-col flex-1">
                     <h2 className="text-lg font-bold text-stone-800 mb-2">{cause.title}</h2>
-                    <p className="text-sm text-stone-600 mb-3 flex-1">{cause.description}</p>
+                    <p className="text-gray-600 text-sm line-clamp-3">{cause.description}</p>
+                    <br />
                     <div className="h-2 bg-stone-200 rounded-full mb-2">
                       <div
                         className="h-2 bg-stone-700 rounded-full"
@@ -76,12 +79,21 @@ const DonatePage = () => {
                     <p className="text-xs text-stone-600 mb-4">
                       Raised: ₦{formatAmount(cause.raisedAmount)} / ₦{formatAmount(cause.goalAmount)}
                     </p>
-                    <Link
-                      to={`/donateform/${cause._id}`}
-                      className="mt-auto bg-stone-800 hover:bg-stone-900 text-white py-2 rounded font-semibold text-center"
-                    >
-                      Donate Now
-                    </Link>
+
+                    <div className="flex flex-col gap-2">
+                      <button
+                        onClick={() => navigate(`/causes/${cause._id}`)}
+                        className="w-full flex justify-center items-center gap-2 bg-stone-700 hover:bg-stone-800 text-white px-4 py-2 rounded text-sm"
+                      >
+                        View Details
+                      </button>
+                      <Link
+                        to={`/donateform/${cause._id}`}
+                        className="mt-auto bg-stone-800 hover:bg-stone-900 text-white py-2 rounded font-semibold text-center"
+                      >
+                        Donate Now
+                      </Link>
+                    </div>
                   </div>
                 </div>
               );

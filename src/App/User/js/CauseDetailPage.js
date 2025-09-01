@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { FaArrowLeft, FaDonate } from "react-icons/fa";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -41,7 +41,7 @@ const CauseDetailPage = () => {
   if (!cause) return <div className="p-6 text-red-600">Loading cause details...</div>;
 
   const progress = Math.min(100, Math.round((cause.raisedAmount / cause.goalAmount) * 100));
-  const images = cause.images && cause.images.length > 0 ? cause.images : [cause.imageUrl];
+  const images = cause.images && cause.images.length > 0 ? cause.images : [cause.image];
 
   return (
     <div className="min-w-[100vw] bg-stone-100">
@@ -55,11 +55,11 @@ const CauseDetailPage = () => {
         </button>
 
         <div className="grid md:grid-cols-2 gap-8 bg-white p-6 rounded shadow">
-          <div className="relative w-full h-64 md:h-[400px] overflow-hidden rounded">
+          <div className="relative w-full h-64 md:h-[400px] overflow-hidden rounded bg-black">
             <img
               src={images[currentImageIndex]}
               alt={cause.title}
-              className="w-full h-full object-cover rounded"
+              className="w-full h-full object-contain rounded"
             />
             {images.length > 1 && (
               <>
@@ -79,6 +79,7 @@ const CauseDetailPage = () => {
             )}
           </div>
 
+
           <div>
             <h2 className="text-3xl font-bold text-stone-900 mb-4">{cause.title}</h2>
             <p className="text-stone-700 mb-4">{cause.description}</p>
@@ -92,12 +93,13 @@ const CauseDetailPage = () => {
                 style={{ width: `${progress}%` }}
               ></div>
             </div>
-            <button
-              onClick={() => navigate(`/donate/${cause._id}`)}
-              className="mt-4 flex items-center justify-center gap-2 bg-stone-800 hover:bg-stone-900 text-white px-6 py-3 rounded text-sm font-semibold"
+            <Link
+              to={`/donateform/${cause._id}`}
+              className="mt-auto w-full bg-stone-800 hover:bg-stone-900 text-white py-3 px-4 rounded-xl font-semibold text-center shadow-md hover:shadow-lg transition-all duration-300"
             >
-              <FaDonate /> Donate Now
-            </button>
+              Donate Now
+            </Link>
+
           </div>
         </div>
       </div>
