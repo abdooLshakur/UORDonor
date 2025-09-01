@@ -93,7 +93,7 @@ const AdminSignup = () => {
   };
 
   return (
-    <div className="w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-100 via-white to-blue-100 px-4">
+    <div className="w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-stone-100 via-stone-200 to-stone-100 px-4">
       <ToastContainer />
       <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 sm:p-8">
         <h2 className="text-2xl font-bold text-gray-800 text-center">Admin Signup</h2>
@@ -104,14 +104,14 @@ const AdminSignup = () => {
           <div>
             <input
               type="text"
-              placeholder="First Name"
+              placeholder="Full Name"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300"
               value={fname}
               onChange={(e) => setFname(e.target.value)}
             />
             {error && fname === "" && (
               <span className="text-red-500 text-sm mt-1 block">
-                Please enter First name.
+                Please enter Full name.
               </span>
             )}
           </div>
@@ -195,7 +195,7 @@ const AdminSignup = () => {
           <div className="col-span-1 md:col-span-2">
             <button
               type="submit"
-              className="w-full bg-rose-500 text-white font-medium py-3 rounded-lg hover:bg-rose-600 transition"
+              className="w-full bg-stone-800 hover:bg-stone-900 text-white font-medium py-3 rounded-lg  transition"
               disabled={isLoading}
             >
               {isLoading ? "Signing Up..." : "Sign Up"}

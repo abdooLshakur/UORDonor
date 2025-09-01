@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.08331185.css",
-    "main.js": "/static/js/main.747f2e2c.js",
+    "main.css": "/static/css/main.fcac5686.css",
+    "main.js": "/static/js/main.fc26a2e4.js",
     "static/js/453.290d0904.chunk.js": "/static/js/453.290d0904.chunk.js",
     "static/media/ben-white-oSg7-6B10zo-unsplash.jpg": "/static/media/ben-white-oSg7-6B10zo-unsplash.aca5114dd12ce08bd2dd.jpg",
     "static/media/two.jpg": "/static/media/two.a74fab2533e62228330e.jpg",
     "static/media/one.jpg": "/static/media/one.c0cdac5c27e28e11decd.jpg",
     "static/media/three.jpg": "/static/media/three.9d84bc611e4ab2fc5593.jpg",
     "index.html": "/index.html",
-    "main.08331185.css.map": "/static/css/main.08331185.css.map",
-    "main.747f2e2c.js.map": "/static/js/main.747f2e2c.js.map",
+    "main.fcac5686.css.map": "/static/css/main.fcac5686.css.map",
+    "main.fc26a2e4.js.map": "/static/js/main.fc26a2e4.js.map",
     "453.290d0904.chunk.js.map": "/static/js/453.290d0904.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.08331185.css",
-    "static/js/main.747f2e2c.js"
+    "static/css/main.fcac5686.css",
+    "static/js/main.fc26a2e4.js"
   ]
 }
