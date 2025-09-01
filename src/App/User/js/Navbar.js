@@ -5,11 +5,11 @@ import Cookies from "js-cookie";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(!!Cookies.get("user"));
+  const [isAuthenticated, setIsAuthenticated] = useState(!!Cookies.get("token"));
   const location = useLocation(); 
 
   useEffect(() => {
-    const token = Cookies.get("user");
+    const token = Cookies.get("token");
 
     if (token) {
       setIsAuthenticated(true);
