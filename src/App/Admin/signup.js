@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const AdminSignup = () => {
   const [fname, setFname] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [dob, setdob] = useState("");
+  const [dob, setDob] = useState("");
   const [Gender, setGender] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
   const Navigate = useNavigate();
   const api = "https://api.ummaofrasulullahcharityfoundation.com";
 
   const handleEvent = async (e) => {
-    setIsLoading(true);
     e.preventDefault();
+    setIsLoading(true);
+    setError("");
+    setSuccess("");
 
     const isEmpty = (field) => !field.trim();
 
@@ -29,32 +31,16 @@ const AdminSignup = () => {
       isEmpty(Gender) ||
       isEmpty(password)
     ) {
-      setError(true);
-      toast.warning("Please fill in all required fields.");
-      setIsLoading(false);
-      return;
-    }
-
-    const birthDate = new Date(dob);
-    const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-
-    if (age < 18) {
-      setError(true);
-      toast.error("You must be at least 18 years old to sign up.");
+      setError("⚠️ Please fill in all required fields.");
       setIsLoading(false);
       return;
     }
 
     const signupData = {
       fullName: fname.trim(),
-      age,
+      dob: dob.trim(), // ✅ save dob as string
       email: email.trim(),
-      phone: phone.trim(),
+      phoneNumber: phone.trim(),
       password: password.trim(),
       gender: Gender.trim(),
     };
@@ -75,18 +61,16 @@ const AdminSignup = () => {
       }
 
       if (data.success) {
-        toast.success(data.message || "Sign up successful!");
+        setSuccess(data.message || "✅ Sign up successful!");
         setTimeout(() => {
           Navigate("/admin-login");
-        }, 500);
+        }, 1000);
       } else {
-        setError(true);
-        toast.error("Signup failed.");
+        setError("Signup failed. Please try again.");
       }
     } catch (err) {
       console.error("Signup Error:", err.message || err);
-      setError(true);
-      toast.error(err.message || "An error occurred during signup.");
+      setError(err.message || "An error occurred during signup.");
     } finally {
       setIsLoading(false);
     }
@@ -94,7 +78,6 @@ const AdminSignup = () => {
 
   return (
     <div className="w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-stone-100 via-stone-200 to-stone-100 px-4">
-      <ToastContainer />
       <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 sm:p-8">
         <h2 className="text-2xl font-bold text-gray-800 text-center">Admin Signup</h2>
         <form
@@ -121,7 +104,7 @@ const AdminSignup = () => {
               type="date"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300"
               value={dob}
-              onChange={(e) => setdob(e.target.value)}
+              onChange={(e) => setDob(e.target.value)}
             />
             {error && dob === "" && (
               <span className="text-red-500 text-sm mt-1 block">
@@ -195,14 +178,21 @@ const AdminSignup = () => {
           <div className="col-span-1 md:col-span-2">
             <button
               type="submit"
-              className="w-full bg-stone-800 hover:bg-stone-900 text-white font-medium py-3 rounded-lg  transition"
+              className="w-full bg-stone-800 hover:bg-stone-900 text-white font-medium py-3 rounded-lg transition"
               disabled={isLoading}
             >
               {isLoading ? "Signing Up..." : "Sign Up"}
             </button>
           </div>
-        
         </form>
+
+        {/* ✅ Show success or error messages below button */}
+        {error && (
+          <p className="text-center text-red-600 text-sm mt-4">{error}</p>
+        )}
+        {success && (
+          <p className="text-center text-green-600 text-sm mt-4">{success}</p>
+        )}
 
         <p className="text-center mt-4 text-sm text-gray-600">
           Already have an account?{" "}
@@ -212,7 +202,6 @@ const AdminSignup = () => {
         </p>
       </div>
     </div>
-
   );
 };
 
