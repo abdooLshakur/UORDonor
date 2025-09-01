@@ -119,8 +119,8 @@ const AdminProfile = () => {
           <div>
             <label className="block mb-1 text-sm font-medium text-stone-700">Location</label>
             <input
-              type="tel"
-              name="phoneNumber"
+              type="text"
+              name="location"
               value={editData.location}
               onChange={handleChange}
               className="w-full border border-stone-300 px-4 py-2 rounded"
