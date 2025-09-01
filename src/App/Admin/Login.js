@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const AdminLogin = () => {
-  const api = "https://api.ummaofrasulullahcharityfoundation.com";
+  const api = "http://localhost:5000";
+  // const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");

@@ -5,7 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 import AdminSidebar from "./Sidebar";
 
 const AdminCauses = () => {
-  const api = "https://api.ummaofrasulullahcharityfoundation.com";
+  const api = "http://localhost:5000";
+  // const api = "https://api.ummaofrasulullahcharityfoundation.com";
   const [causes, setCauses] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [editIndex, setEditIndex] = useState(null);
