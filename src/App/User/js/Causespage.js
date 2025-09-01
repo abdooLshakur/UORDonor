@@ -89,7 +89,7 @@ const CausesListPage = () => {
               className="bg-white rounded shadow overflow-hidden flex flex-col justify-between"
             >
               <img
-                src={cause.imageUrl}
+                src={cause.image}
                 alt={cause.title}
                 className="w-full h-48 object-cover"
               />
