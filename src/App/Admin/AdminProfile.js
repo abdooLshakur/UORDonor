@@ -90,11 +90,10 @@ const AdminProfile = () => {
           {/* Success/Error Message */}
           {message.text && (
             <div
-              className={`p-3 rounded text-sm ${
-                message.type === "success"
+              className={`p-3 rounded text-sm ${message.type === "success"
                   ? "bg-green-100 text-green-700 border border-green-300"
                   : "bg-red-100 text-red-700 border border-red-300"
-              }`}
+                }`}
             >
               {message.text}
             </div>
@@ -123,14 +122,12 @@ const AdminProfile = () => {
           </div>
 
           <div>
-            <label className="block mb-1 text-sm font-medium text-stone-700">Date of Birth</label>
+            <label className="block mb-1 text-sm font-medium text-stone-700">Age</label>
             <input
-              type="date"
-              name="dob"
-              value={editData.age}
-              onChange={handleChange}
-              className="w-full border border-stone-300 px-4 py-2 rounded"
-              required
+              type="text"
+              value={adminData.age}
+              disabled
+              className="w-full bg-stone-100 px-4 py-2 rounded border border-stone-300"
             />
           </div>
 
