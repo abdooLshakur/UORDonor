@@ -81,7 +81,7 @@ const AdminSignup = () => {
         }, 500);
       } else {
         setError(true);
-        toast.error(data.message || "Signup failed.");
+        toast.error("Signup failed.");
       }
     } catch (err) {
       console.error("Signup Error:", err.message || err);
@@ -201,11 +201,12 @@ const AdminSignup = () => {
               {isLoading ? "Signing Up..." : "Sign Up"}
             </button>
           </div>
+        
         </form>
 
         <p className="text-center mt-4 text-sm text-gray-600">
           Already have an account?{" "}
-          <Link to="/adminlogin" className="text-blue-500 hover:underline">
+          <Link to="/admin-login" className="text-blue-500 hover:underline">
             Sign in
           </Link>
         </p>
