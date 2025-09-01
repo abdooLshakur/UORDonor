@@ -55,30 +55,30 @@ const ContactPage = () => {
           </p>
 
           <div className="space-y-2 text-stone-700">
-            <p><strong>📞 Phone:</strong> +234 903 827 3856</p>
+            <p><strong>📞 Phone:</strong> +234 707 856 1641</p>
             <p><strong>✉️ Email:</strong> uorcharityfoundation@gmail.com</p>
             <p><strong>📍 Address:</strong> Remote / Online-based</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-4 mt-6 text-stone-600 text-xl">
-            <a href="https://chat.whatsapp.com/E1T1LqGwk2cByn6s4wel7s" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-green-600">
+            <a href="https://whatsapp.com/channel/0029VaBNMp15fM5Vn8qY112s" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-green-600">
               <FaWhatsapp />
             </a>
-            <a href="#" aria-label="Instagram" className="hover:text-pink-600">
+            <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=qbvu3w2" aria-label="Instagram" className="hover:text-pink-600">
               <FaInstagram />
             </a>
-            <a href="#" aria-label="TikTok" className="hover:text-black">
+            <a href="https://www.tiktok.com/@ummaofrasulullah?_t=ZM-8xwSQUmExqn&_r=" aria-label="TikTok" className="hover:text-black">
               <FaTiktok />
             </a>
-            <a href="#" aria-label="YouTube" className="hover:text-red-600">
+            <a href="https://www.youtube.com/@umma_of_rasulullah1" aria-label="YouTube" className="hover:text-red-600">
               <FaYoutube />
             </a>
-            <a href="#" aria-label="Twitter" className="hover:text-blue-500">
+            {/* <a href="#" aria-label="Twitter" className="hover:text-blue-500">
               <FaTwitter />
-            </a>
-            <a href="#" aria-label="Facebook" className="hover:text-blue-700">
+            </a> */}
+            {/* <a href="#" aria-label="Facebook" className="hover:text-blue-700">
               <FaFacebook />
-            </a>
+            </a> */}
           </div>
         </div>
 

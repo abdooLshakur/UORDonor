@@ -81,12 +81,14 @@ const HomePage = () => {
                 <p className="text-lg md:text-xl mb-6">
                   {slide.text}
                 </p>
-                <Link
-                  to={"/causes"}
-                  className="inline-block bg-stone-800 hover:bg-stone-900 text-white px-6 py-3 rounded font-medium"
+
+                <a
+                  href="/causes"
+                  className="inline-block bg-stone-800 text-white px-6 py-3 rounded hover:bg-stone-900 transition"
                 >
                   Explore Causes
-                </Link>
+                </a>
+                
               </div>
             </div>
           </div>
@@ -143,11 +145,14 @@ const HomePage = () => {
             {causes.slice(0, 3).map((cause) => (
               <div key={cause._id} className="bg-stone-100 rounded shadow p-4">
                 <img
-                  src={cause.image}
+                  src={cause.images[0]}
                   alt={cause.title}
                   className="rounded mb-4 w-full"
                 />
                 <h3 className="text-xl font-semibold mb-2">{cause.title}</h3>
+                <p className="text-gray-600 text-sm line-clamp-3">
+                  {cause.description}
+                </p>
                 <p className="text-sm mb-2">Raised: ₦{cause.raised || 0} / Goal: ₦{cause.goal || 0}</p>
                 <div className="w-full bg-stone-300 h-2 rounded mb-4">
                   <div
