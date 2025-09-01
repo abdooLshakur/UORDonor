@@ -13,6 +13,7 @@ export default function Navbar() {
 
     if (token) {
       setIsAuthenticated(true);
+      console.log(token)
     } else {
       console.log("No token found");
       setIsAuthenticated(false);
