@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c3bb385a.css",
-    "main.js": "/static/js/main.9a51bede.js",
+    "main.js": "/static/js/main.c83b03c7.js",
     "static/js/453.290d0904.chunk.js": "/static/js/453.290d0904.chunk.js",
     "static/media/ben-white-oSg7-6B10zo-unsplash.jpg": "/static/media/ben-white-oSg7-6B10zo-unsplash.aca5114dd12ce08bd2dd.jpg",
     "static/media/two.jpg": "/static/media/two.a74fab2533e62228330e.jpg",
@@ -9,11 +9,11 @@
     "static/media/three.jpg": "/static/media/three.9d84bc611e4ab2fc5593.jpg",
     "index.html": "/index.html",
     "main.c3bb385a.css.map": "/static/css/main.c3bb385a.css.map",
-    "main.9a51bede.js.map": "/static/js/main.9a51bede.js.map",
+    "main.c83b03c7.js.map": "/static/js/main.c83b03c7.js.map",
     "453.290d0904.chunk.js.map": "/static/js/453.290d0904.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3bb385a.css",
-    "static/js/main.9a51bede.js"
+    "static/js/main.c83b03c7.js"
   ]
 }

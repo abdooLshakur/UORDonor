@@ -62,7 +62,7 @@ const AdminCauses = () => {
         formData.append("images", file);
       });
 
-      const method = editIndex !== null ? "PATCH" : "POST";
+      const method = editIndex !== null ? "PUT" : "POST";
       const url = editIndex !== null
         ? `${api}/api/causes/${causes[editIndex]._id}`
         : `${api}/api/causes/add`;

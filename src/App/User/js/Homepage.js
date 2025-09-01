@@ -6,6 +6,7 @@ import banner1 from "../images/one.jpg";
 import banner2 from "../images/two.jpg";
 import banner3 from "../images/three.jpg";
 import lightimg from "../images/ben-white-oSg7-6B10zo-unsplash.jpg";
+import { Link } from "react-router-dom";
 
 const heroSlides = [
   {
@@ -80,12 +81,12 @@ const HomePage = () => {
                 <p className="text-lg md:text-xl mb-6">
                   {slide.text}
                 </p>
-                <a
-                  href="/causes"
+                <Link
+                  to={"/causes"}
                   className="inline-block bg-stone-800 hover:bg-stone-900 text-white px-6 py-3 rounded font-medium"
                 >
                   Explore Causes
-                </a>
+                </Link>
               </div>
             </div>
           </div>
