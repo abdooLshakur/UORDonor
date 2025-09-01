@@ -38,7 +38,7 @@ const AdminSignup = () => {
 
     const signupData = {
       fullName: fname.trim(),
-      dob: dob.trim(), // ✅ save dob as string
+      age: dob.trim(), // ✅ save dob as string
       email: email.trim(),
       phoneNumber: phone.trim(),
       password: password.trim(),
