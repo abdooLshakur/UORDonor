@@ -5,20 +5,19 @@ import Cookies from "js-cookie";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(!!Cookies.get("token"));
-  const location = useLocation(); 
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const token = Cookies.get("token");
-
-    if (token) {
+    const user = Cookies.get("user"); 
+    if (user) {
       setIsAuthenticated(true);
-      console.log(token)
+      console.log("User found:", user);
     } else {
-      console.log("No token found");
+      console.log("No user found");
       setIsAuthenticated(false);
     }
-  }, [isAuthenticated]);
+  }, [location.pathname]); 
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
