@@ -1,23 +1,26 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Cookies from "js-cookie";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
-    const user = Cookies.get("user");
-    if (user) {
-      setIsAuthenticated(true);
-      console.log("User found:", user);
+    const userCookie = Cookies.get("user");
+    if (userCookie) {
+      try {
+        const parsed = JSON.parse(decodeURIComponent(userCookie));
+        setIsAuthenticated(true);
+      } catch (error) {
+        console.error("Error parsing user cookie:", error);
+        console.error("Failed to load user data");
+      }
     } else {
-      console.log("No user found");
       setIsAuthenticated(false);
     }
-  }, [location.pathname]);
+  }, []);
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
