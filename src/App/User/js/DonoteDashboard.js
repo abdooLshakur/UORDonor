@@ -62,7 +62,7 @@ const DonatePage = () => {
               return (
                 <div key={cause._id} className="bg-white rounded shadow flex flex-col h-full">
                   <img
-                    src={cause.images && cause.images.length > 0 ? cause.images[0] : "/placeholder.jpg"}
+                    src={cause.images[0]}
                     alt={cause.title}
                     className="w-full h-48 object-cover"
                   />

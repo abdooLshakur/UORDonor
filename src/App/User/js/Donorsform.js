@@ -92,7 +92,7 @@ const DonateFormPage = () => {
     <div className="w-[99vw] min-h-screen bg-stone-100 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-3xl bg-white shadow-md p-8 rounded-lg">
         <h2 className="text-2xl font-bold text-stone-800 mb-4 text-center">Donate to {cause.title}</h2>
-        <img src={cause.images && cause.images.length > 0 ? cause.images[0] : "/placeholder.jpg"} alt={cause.title} className="w-full h-56 object-cover rounded mb-6" />
+        <img src={cause.images[0]} alt={cause.title} className="w-full h-56 object-cover rounded mb-6" />
         <p className="text-stone-600 mb-6 text-center">{cause.description}</p>
 
         {!submitted ? (
