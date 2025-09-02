@@ -46,65 +46,49 @@ const AdminCauses = () => {
   };
 
   const handleSave = async () => {
-    try {
-      if (!newCause.title || !newCause.goalAmount || !newCause.type) return;
+    const formData = new FormData();
+    formData.append("title", newCause.title);
+    formData.append("description", newCause.description);
+    formData.append("location", newCause.location);
+    formData.append("goalAmount", newCause.goalAmount);
+    formData.append("raisedAmount", newCause.raisedAmount);
+    formData.append("type", newCause.type);
+    formData.append("isCompleted", newCause.isCompleted);
 
-      const formData = new FormData();
-      formData.append("title", newCause.title);
-      formData.append("description", newCause.description);
-      formData.append("location", newCause.location);
-      formData.append("goalAmount", newCause.goalAmount);
-      formData.append("raisedAmount", newCause.raisedAmount);
-      formData.append("type", newCause.type);
-      formData.append("isCompleted", newCause.isCompleted);
+    // append new files
+    newCause.images.forEach((file) => {
+      formData.append("images", file);
+    });
 
-      newCause.images.forEach((file) => {
-        formData.append("images", file);
-      });
-
-      const method = editIndex !== null ? "PUT" : "POST";
-      const url = editIndex !== null
-        ? `${api}/api/causes/${causes[editIndex]._id}`
-        : `${api}/api/causes/add`;
-
-
-      const res = await fetch(url, {
-        method,
-        credentials: "include",
-        body: formData,
-      });
-
-      if (!res.ok) throw new Error("Request failed");
-
-      toast.success(editIndex !== null ? "Cause updated successfully" : "Cause added successfully");
-      fetchCauses();
-      setShowModal(false);
-      setEditIndex(null);
-      setNewCause({
-        title: "",
-        location: "",
-        description: "",
-        goalAmount: 0,
-        raisedAmount: 0,
-        type: "",
-        isCompleted: false,
-        images: [],
-      });
-    } catch (err) {
-      console.error(err);
-      toast.error("Failed to save cause");
+    // preserve old images if updating
+    if (editIndex !== null && newCause.oldImages) {
+      newCause.oldImages.forEach((url) => formData.append("oldImages", url));
     }
+
+    const method = editIndex !== null ? "PUT" : "POST";
+    const url = editIndex !== null
+      ? `${api}/api/causes/${causes[editIndex]._id}`
+      : `${api}/api/causes/add`;
+
+    const res = await fetch(url, {
+      method,
+      credentials: "include",
+      body: formData,
+    });
   };
+
 
   const handleEdit = (index) => {
     const cause = causes[index];
     setNewCause({
       ...cause,
-      images: [],
+      images: [], // keep empty here, but store old images separately
+      oldImages: cause.images || [],
     });
     setEditIndex(index);
     setShowModal(true);
   };
+
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this cause?")) return;
@@ -255,11 +239,16 @@ const AdminCauses = () => {
                   className="border border-stone-300 rounded px-4 py-2"
                 />
                 {newCause.images.length > 0 && (
-                  <ul className="text-sm text-stone-700 mt-2">
+                  <div className="flex flex-wrap gap-2 mt-2">
                     {newCause.images.map((file, index) => (
-                      <li key={index}>{file.name}</li>
+                      <img
+                        key={index}
+                        src={URL.createObjectURL(file)}
+                        alt="preview"
+                        className="w-20 h-20 object-cover rounded"
+                      />
                     ))}
-                  </ul>
+                  </div>
                 )}
                 <input
                   name="type"
