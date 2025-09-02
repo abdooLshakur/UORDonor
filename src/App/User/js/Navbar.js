@@ -9,7 +9,7 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    const user = Cookies.get("user"); 
+    const user = Cookies.get("user");
     if (user) {
       setIsAuthenticated(true);
       console.log("User found:", user);
@@ -17,7 +17,7 @@ export default function Navbar() {
       console.log("No user found");
       setIsAuthenticated(false);
     }
-  }, [location.pathname]); 
+  }, [location.pathname]);
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -57,6 +57,7 @@ export default function Navbar() {
           <li><Link to="/aboutus" onClick={() => setIsOpen(false)}>About Us</Link></li>
           <li><Link to="/causes" onClick={() => setIsOpen(false)}>Causes</Link></li>
           <li><Link to="/contactus" onClick={() => setIsOpen(false)}>Contact</Link></li>
+          <li><Link to="/donor-dashboard" onClick={() => setIsOpen(false)}>Dashboard</Link></li>
           {isAuthenticated ? (
             <li><Link to="/donor-dashboard" onClick={() => setIsOpen(false)}>Dashboard</Link></li>
           ) : (

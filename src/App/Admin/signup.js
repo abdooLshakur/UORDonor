@@ -100,12 +100,14 @@ const AdminSignup = () => {
           </div>
 
           <div>
+            <div className="flex  px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300">
+            <label htmlFor="">Dirth of birth</label>
             <input
               type="date"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300"
+              className="px-4"
               value={dob}
               onChange={(e) => setDob(e.target.value)}
-            />
+            /></div>
             {error && dob === "" && (
               <span className="text-red-500 text-sm mt-1 block">
                 Please enter date of birth.
