@@ -36,6 +36,8 @@ export default function Navbar() {
           <li><Link to="/aboutus">About Us</Link></li>
           <li><Link to="/causes">Causes</Link></li>
           <li><Link to="/contactus">Contact</Link></li>
+          <li><Link to="/donor-dashboard">Dashboard</Link></li>
+
           {isAuthenticated ? (
             <li><Link to="/donor-dashboard">Dashboard</Link></li>
           ) : (
