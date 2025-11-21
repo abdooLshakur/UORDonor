@@ -1,5 +1,4 @@
-import React from "react";
-import { FaHeart, FaPeopleCarry, FaBullseye, FaWhatsapp, FaBook, FaTshirt, FaHome, FaUtensils, FaLightbulb } from "react-icons/fa";
+import { FaHeart, FaPeopleCarry, FaBullseye, FaWhatsapp, FaBook, FaTshirt, FaUtensils, FaLightbulb } from "react-icons/fa";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 

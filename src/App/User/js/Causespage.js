@@ -43,7 +43,7 @@ const CausesListPage = () => {
     const bComplete = b.raisedAmount >= b.goalAmount;
     return aComplete - bComplete;
   });
-  const images = causes.images && causes.images.length > 0 ? causes.images : [causes.images];
+  // const images = causes.images && causes.images.length > 0 ? causes.images : [causes.images];
 
   const totalPages = Math.ceil(sorted.length / causesPerPage);
   const start = (currentPage - 1) * causesPerPage;

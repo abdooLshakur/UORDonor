@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaInstagram, FaTiktok, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (

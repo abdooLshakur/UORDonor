@@ -1,4 +1,5 @@
 import  { useEffect, useState } from "react";
+import { useCallback } from "react";
 import AdminSidebar from "./Sidebar";
 
 const AdminUsers = () => {
@@ -9,26 +10,24 @@ const AdminUsers = () => {
   const itemsPerPage = 8;
   const api = "https://api.ummaofrasulullahcharityfoundation.com";
 
-  const fetchDonors = async () => {
-    try {
-      const res = await fetch(
-        `${api}/api/users?page=${currentPage}&limit=${itemsPerPage}&search=${encodeURIComponent(searchQuery)}`,
-        {
-          credentials: "include",
-        }
-      );
-      if (!res.ok) throw new Error("Failed to fetch donors");
-      const data = await res.json();
-      setDonors(data);
-      setTotalPages(data.totalPages);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+const fetchDonors = useCallback(async () => {
+  try {
+    const res = await fetch(
+      `${api}/api/users?page=${currentPage}&limit=${itemsPerPage}&search=${encodeURIComponent(searchQuery)}`,
+      { credentials: "include" }
+    );
+    if (!res.ok) throw new Error("Failed to fetch donors");
+    const data = await res.json();
+    setDonors(data);
+    setTotalPages(data.totalPages);
+  } catch (err) {
+    console.error(err);
+  }
+}, [api, currentPage, itemsPerPage, searchQuery]);
 
-  useEffect(() => {
-    fetchDonors();
-  }, [currentPage, searchQuery]);
+useEffect(() => {
+  fetchDonors();
+}, [fetchDonors]);
 
   return (
     <div className="min-h-screen flex">

@@ -11,7 +11,6 @@ export default function Navbar() {
     const userCookie = Cookies.get("user");
     if (userCookie) {
       try {
-        const parsed = JSON.parse(decodeURIComponent(userCookie));
         setIsAuthenticated(true);
       } catch (error) {
         console.error("Error parsing user cookie:", error);

@@ -6,7 +6,6 @@ import banner1 from "../images/one.jpg";
 import banner2 from "../images/two.jpg";
 import banner3 from "../images/three.jpg";
 import lightimg from "../images/ben-white-oSg7-6B10zo-unsplash.jpg";
-import { Link } from "react-router-dom";
 
 const heroSlides = [
   {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaFacebook, FaTwitter, FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import {  FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import Navbar from "./Navbar";
 import Footer from './Footer';
 import { ToastContainer, toast } from "react-toastify";
